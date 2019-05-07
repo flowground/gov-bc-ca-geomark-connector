@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "geomarkId": {
+            "required": true,
+            "type": "string"
+        },
+        "fileFormatExtension": {
+            "required": true,
+            "enum": [
+                "json",
+                "xml",
+                "kml",
+                "kmz",
+                "shp",
+                "shpz",
+                "geojson",
+                "gml",
+                "wkt"
+            ],
+            "type": "string"
+        },
+        "srid": {
+            "required": false,
+            "default": 4326,
+            "enum": [
+                4326,
+                3005,
+                3857,
+                26907,
+                26908,
+                26909,
+                26910,
+                26911
+            ],
+            "type": "integer"
+        }
+    }
+}

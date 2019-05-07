@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "geomarkUrl": {
+            "required": true,
+            "type": "string"
+        },
+        "resultFormat": {
+            "required": false,
+            "enum": [
+                "json",
+                "xml",
+                "kml",
+                "kmz",
+                "shp",
+                "shpz",
+                "geojson",
+                "gml",
+                "wkt"
+            ],
+            "type": "string"
+        },
+        "allowOverlap": {
+            "required": false,
+            "default": false,
+            "enum": [
+                false,
+                true
+            ],
+            "type": "boolean"
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        },
+        "redirectUrl": {
+            "required": false,
+            "type": "string"
+        },
+        "failureRedirectUrl": {
+            "required": false,
+            "type": "string"
+        },
+        "bufferMetres": {
+            "required": false,
+            "type": "integer"
+        },
+        "bufferJoin": {
+            "required": false,
+            "default": "ROUND",
+            "enum": [
+                "ROUND",
+                "MITRE",
+                "BEVEL"
+            ],
+            "type": "string"
+        },
+        "bufferCap": {
+            "required": false,
+            "default": "ROUND",
+            "enum": [
+                "ROUND",
+                "SQUARE",
+                "FLAT"
+            ],
+            "type": "string"
+        },
+        "bufferMitreLimit": {
+            "required": false,
+            "default": 5,
+            "type": "integer"
+        },
+        "bufferSegments": {
+            "required": false,
+            "default": 8,
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "allowOverlap": {
+                    "default": false,
+                    "description": "When multiple=true select this option to allow overlapping geometries",
+                    "enum": [
+                        false,
+                        true
+                    ],
+                    "type": "boolean"
+                },
+                "body": {
+                    "description": "The binary or character content representing the geometry or geometries",
+                    "type": "string"
+                },
+                "bufferCap": {
+                    "default": "ROUND",
+                    "description": "If bufferMetres is specified, The style of buffer to use at the ends of a buffered line.",
+                    "enum": [
+                        "ROUND",
+                        "SQUARE",
+                        "FLAT"
+                    ],
+                    "type": "string"
+                },
+                "bufferJoin": {
+                    "default": "ROUND",
+                    "description": "If bufferMetres is specified, The style of buffer to use for joins between the line segments for lines and polygons.",
+                    "enum": [
+                        "ROUND",
+                        "MITRE",
+                        "BEVEL"
+                    ],
+                    "type": "string"
+                },
+                "bufferMetres": {
+                    "description": "The amount to buffer the geometry in metres, must only contain numerical digits (e.g 10). Leave blank and no buffer will be added to input geometries. If blank then any Point, LineString, MultiPoint and MultiLineString geometries will be ignored.",
+                    "type": "integer"
+                },
+                "bufferMitreLimit": {
+                    "default": 5,
+                    "description": "If bufferMetres is specified, the maximum ratio of distance from the original geometry to a mitre buffer point and the buffer amount. If the ratio is greater than this a bevel will be used instead. This prevents infinite distances when the angle between the two lines at a join is small. Must be > 0.",
+                    "type": "integer"
+                },
+                "bufferSegments": {
+                    "default": 8,
+                    "description": "If bufferMetres is specified, the number of line segments used in each quadrant to approximate the curve for round end-cap and join styles. Must be > 0.",
+                    "type": "integer"
+                },
+                "callback": {
+                    "description": "The callback function a JSON result format would be wrapped in to support Ajax requests.",
+                    "type": "string"
+                },
+                "failureRedirectUrl": {
+                    "description": "The url to redirect if the geomark could not be created. The URL will include a <fieldName>_Error parameter with the error message for the field that caused the error.",
+                    "type": "string"
+                },
+                "format": {
+                    "description": "The file format name extension of the input geometry.",
+                    "enum": [
+                        "json",
+                        "xml",
+                        "kml",
+                        "kmz",
+                        "shp",
+                        "shpz",
+                        "geojson",
+                        "gml",
+                        "wkt"
+                    ],
+                    "type": "string"
+                },
+                "multiple": {
+                    "default": false,
+                    "description": "Boolean flag indicating if multiple geometries are to be used for the geomark (true) or only a single geometry from the first geometry (false).",
+                    "enum": [
+                        false,
+                        true
+                    ],
+                    "type": "boolean"
+                },
+                "redirectUrl": {
+                    "description": "The optional external URL to redirect the user to when the geomark is created rather than showing the geomark info page. The geomarkId and geomarkUrl query string parameters will be added to the redirectUrl so that the target application gets a reference to the geomark.",
+                    "type": "string"
+                },
+                "resultFormat": {
+                    "description": "The file format the geomark info resource should be returned using.",
+                    "enum": [
+                        "json",
+                        "xml",
+                        "kml",
+                        "kmz",
+                        "shp",
+                        "shpz",
+                        "geojson",
+                        "gml",
+                        "wkt"
+                    ],
+                    "type": "string"
+                },
+                "srid": {
+                    "default": 4326,
+                    "description": "The srid of the coordinate system the input geometries are in. If the file includes a coordinate system definition that will be used.",
+                    "enum": [
+                        4326,
+                        3005,
+                        3857,
+                        26907,
+                        26908,
+                        26909,
+                        26910,
+                        26911
+                    ],
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
